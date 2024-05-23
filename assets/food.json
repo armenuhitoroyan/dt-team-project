@@ -1,0 +1,294 @@
+[
+    {
+        "id": "1",
+        "image": "salad.png",
+        "name": "Cesar Salad",
+        "date": "01.01.2001",
+        "dish-contents": [
+            {
+                "component-name": "chikcken-breat",
+                "image": "salad.png",
+                "info": "",
+                "weight": 35,
+                "calorie": 10
+            },
+            {
+                "component-name": "lettuce",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 20
+            },
+            {
+                "component-name": "tomato",
+                "image": "tomato.png",
+                "info": "",
+                "weight": 25,
+                "calorie": 30
+            },
+            {
+                "component-name": "parmesan cheese",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 40
+            }
+        ],
+        "calorie": 10
+    },
+    {
+        "id": "2",
+        "image": "tomato.png",
+        "name": "Tomatto",
+        "date": "02.02.2002",
+        "dish-contents": [
+            {
+                "component-name": "tomato",
+                "image": "tomato.png",
+                "info": "Tomatoes are herbaceous annuals (less commonly, perennials) of the Solanaceae family. Tomato fruits are berries, also called tomatoes. This name comes from the Italian word pomo d`oro, which literally means “golden apple”. The plant owes its name to the ancient Aztecs, who used the term tomatl, which the French changed to tomate. South America is considered the birthplace of tomatoes, where wild forms of tomatoes (calorizator) have been preserved to this day. The plant came to Europe by sea, was grown as an ornamental, and for some time tomatoes were considered not only inedible, but also poisonous fruits. Only in the 17th century did chefs begin to prepare dishes from fresh and heat-treated tomatoes.",
+                "weight": 40,
+                "calorie": 20
+            }
+        ],
+        "calorie": 20
+    },
+    {
+        "id": "3",
+        "image": "salad.png",
+        "name": "Third food",
+        "date": "03.03.2003",
+        "dish-contents": [
+            {
+                "component-name": "chikcken-breat",
+                "image": "",
+                "info": "",
+                "weight": 35,
+                "calorie": 15
+            },
+            {
+                "component-name": "lettuce",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 25
+            },
+            {
+                "component-name": "tomato",
+                "image": "tomato.png",
+                "info": "Tomatoes are herbaceous annuals (less commonly, perennials) of the Solanaceae family. Tomato fruits are berries, also called tomatoes. This name comes from the Italian word pomo d`oro, which literally means “golden apple”. The plant owes its name to the ancient Aztecs, who used the term tomatl, which the French changed to tomate. South America is considered the birthplace of tomatoes, where wild forms of tomatoes (calorizator) have been preserved to this day. The plant came to Europe by sea, was grown as an ornamental, and for some time tomatoes were considered not only inedible, but also poisonous fruits. Only in the 17th century did chefs begin to prepare dishes from fresh and heat-treated tomatoes.",
+                "weight": 25,
+                "calorie": 20
+            },
+            {
+                "component-name": "parmesan cheese",
+                "image": "",
+                "info": "",
+                "weight": 20
+            }
+        ],
+        "calorie": 30
+    },
+    {
+        "id": "4",
+        "image": "tomato.png",
+        "name": "Forth food",
+        "date": "04.04.2004",
+        "dish-contents": [
+            {
+                "component-name": "egg",
+                "image": "",
+                "info": "",
+                "weight": 40,
+                "calorie": 65
+            },
+            {
+                "component-name": "tomato",
+                "image": "tomato.png",
+                "info": "",
+                "weight": 40,
+                "calorie": 20
+            }
+        ],
+        "calorie": 40
+    },
+    {
+        "id": "5",
+        "image": "salad.png",
+        "name": "Fifth food",
+        "date": "05.05.2005",
+        "dish-contents": [
+            {
+                "component-name": "chikcken-breat",
+                "image": "",
+                "info": "",
+                "weight": 35,
+                "calorie": 10
+            },
+            {
+                "component-name": "lettuce",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 20
+            },
+            {
+                "component-name": "tomato",
+                "image": "tomato.png",
+                "info": "",
+                "weight": 25,
+                "calorie": 20
+            },
+            {
+                "component-name": "parmesan cheese",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 25
+            }
+        ],
+        "calorie": 50
+    },
+    {
+        "id": "6",
+        "image": "tomato.png",
+        "name": "Sixth food",
+        "date": "06.06.2006",
+        "dish-contents": [
+            {
+                "component-name": "macaroni",
+                "image": "",
+                "info": "",
+                "weight": 30,
+                "calorie": 10
+            },
+            {
+                "component-name": "cheese",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 10
+            }
+        ],
+        "calorie": 60
+    },
+    {
+        "id": "7",
+        "image": "salad.png",
+        "name": "Seventh food",
+        "date": "07.07.2007",
+        "dish-contents": [
+            {
+                "component-name": "chikcken-breat",
+                "image": "",
+                "info": "",
+                "weight": 35,
+                "calorie": 10
+            },
+            {
+                "component-name": "lettuce",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 10
+            },
+            {
+                "component-name": "tomato",
+                "image": "",
+                "info": "",
+                "weight": 25,
+                "calorie": 10
+            },
+            {
+                "component-name": "parmesan cheese",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 10
+            }
+        ],
+        "calorie": 70
+    },
+    {
+        "id": "8",
+        "image": "tomato.png",
+        "name": "Eighth food",
+        "date": "08.08.2008",
+        "dis-cContents": [
+            {
+                "component-name": "egg",
+                "image": "",
+                "info": "",
+                "weight": 40,
+                "calorie": 10
+            },
+            {
+                "component-name": "tomato",
+                "image": "tomato.png",
+                "info": "",
+                "weight": 40,
+                "calorie": 20
+            }
+        ],
+        "calorie": 80
+    },
+    {
+        "id": "9",
+        "image": "salad.png",
+        "name": "Ninth food",
+        "date": "09.09.2009",
+        "dish-contents": [
+            {
+                "component-name": "chikcken-breat",
+                "image": "",
+                "info": "",
+                "weight": 35,
+                "calorie": 10
+            },
+            {
+                "component-name": "lettuce",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 10
+            },
+            {
+                "component-name": "tomato",
+                "image": "tomato.png",
+                "info": "",
+                "weight": 25,
+                "calorie": 20
+            },
+            {
+                "component-name": "parmesan cheese",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 10
+            }
+        ],
+        "calorie": 90
+    },
+    {
+        "id": "10",
+        "image": "tomato.png",
+        "name": "Tenth food",
+        "date": "10.10.2010",
+        "dish-contents": [
+            {
+                "component-name": "macaroni",
+                "image": "",
+                "info": "",
+                "weight": 30,
+                "calorie": 55
+            },
+            {
+                "component-name": "cheese",
+                "image": "",
+                "info": "",
+                "weight": 20,
+                "calorie": 45
+            }
+        ],
+        "calorie": 100
+    }
+]
