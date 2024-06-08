@@ -2,7 +2,7 @@ import 'package:chat_messanger_app/base/providers/profile_provider.dart';
 import 'package:chat_messanger_app/config/colors.dart';
 
 import 'package:chat_messanger_app/pages/auth/change_password.dart';
-import 'package:chat_messanger_app/pages/others/body_measurement.dart';
+
 import 'package:chat_messanger_app/pages/others/language/language.dart';
 import 'package:chat_messanger_app/pages/others/privacy/privacy_policy.dart';
 import 'package:chat_messanger_app/pages/profile/contacts.dart';

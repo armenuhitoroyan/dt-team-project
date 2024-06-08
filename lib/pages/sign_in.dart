@@ -1,12 +1,15 @@
 import 'package:chat_messanger_app/base/providers/sign_in_provider.dart';
+import 'package:chat_messanger_app/base/routes.dart';
 
 import 'package:chat_messanger_app/pages/auth/reset_password.dart';
+import 'package:chat_messanger_app/services/auth/auth_gate.dart';
 import 'package:chat_messanger_app/widgets/button.dart';
 import 'package:chat_messanger_app/widgets/textfield.dart';
 import 'package:chat_messanger_app/config/colors.dart';
 import 'package:chat_messanger_app/config/texts.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 // import 'package:flutter/widgets.dart';
@@ -224,6 +227,36 @@ class SignInPage extends StatelessWidget {
                           )
                         ],
                       ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      // Visibility(
+                      //   visible: value.isInCorrectEmailAndPassword,
+                      //   child: AlertDialog(
+                      //     content: const Text(
+                      //       'Incorrect email or password.',
+                      //       style: TextStyle(color: AppColors.colorSheme),
+                      //     ),
+                      //     actions: <Widget>[
+                      //       TextButton(
+                      //         onPressed: () => Navigator.pushNamed(
+                      //             context, AppRoutes.authGate),
+                      //         child: const Text(
+                      //           'Cancel',
+                      //           style: TextStyle(color: AppColors.black),
+                      //         ),
+                      //       ),
+                      //       TextButton(
+                      //         onPressed: () => Navigator.pushNamed(
+                      //             context, AppRoutes.authGate),
+                      //         child: const Text(
+                      //           'OK',
+                      //           style: TextStyle(color: AppColors.black),
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // )
                     ],
                   ),
                   // ),
@@ -242,16 +275,6 @@ class SignInPage extends StatelessWidget {
               const SizedBox(
                 width: 15,
               ),
-              // GestureDetector(
-              //   onTap: () => value.onTap,
-              //   child: const Text(
-              //     'Sign Up',
-              //     style: TextStyle(
-              //       // fontWeight: FontWeight.bold,
-              //       color: AppColors.colorSheme,
-              //     ),
-              //   ),
-              // ),
               GestureDetector(
                 onTap: value.onTap,
                 child: const Text(

@@ -1,12 +1,13 @@
 import 'package:chat_messanger_app/base/routes.dart';
 import 'package:chat_messanger_app/services/auth/auth_service.dart';
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SignInProvider extends ChangeNotifier {
   bool showPassword = false;
   bool isSwitched = true;
-  bool isCorrectEmailAndPassword = false;
+  bool isInCorrectEmailAndPassword = false;
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -39,16 +40,14 @@ class SignInProvider extends ChangeNotifier {
         passwordController.text,
       );
       Navigator.pushNamed(context, AppRoutes.navbar);
-      isCorrectEmailAndPassword = true;
     } catch (e) {
-      isCorrectEmailAndPassword = false;
+      isInCorrectEmailAndPassword = true;
       print('The email address or password is incorrect. Please retry...');
-      // ScaffoldMessenger.of(context).showSnackBar(
-      //   SnackBar(
-      //     content: Text(
-      //         'The email address or password is incorrect. Please retry...'),
-      //   ),
-      // );
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Incorrect email or password'),
+        ),
+      );
     }
     notifyListeners();
   }
