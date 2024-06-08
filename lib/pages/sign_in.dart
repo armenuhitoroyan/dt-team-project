@@ -9,7 +9,7 @@ import 'package:chat_messanger_app/config/colors.dart';
 import 'package:chat_messanger_app/config/texts.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:provider/provider.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 // import 'package:flutter/widgets.dart';

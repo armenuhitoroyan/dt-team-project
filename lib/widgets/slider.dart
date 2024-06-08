@@ -121,29 +121,20 @@ class AppSlider extends StatelessWidget {
                                                       },
                                                       child: state.onOff
                                                           ? const Icon(
-                                                              Icons
-                                                                  .lightbulb_sharp,
+                                                              Icons.circle,
                                                               color: AppColors
                                                                   .colorSheme,
                                                             )
-                                                          : const Icon(Icons
-                                                              .lightbulb_outline),
+                                                          : const Icon(
+                                                              Icons
+                                                                  .circle_outlined,
+                                                              color: AppColors
+                                                                  .grey,
+                                                            ),
                                                     ),
                                                   ],
                                                 ),
                                               ),
-                                              // Row(
-                                              //   children: [
-                                              //     state.onOff || state.index > 0
-                                              //         ? Text(
-                                              //             '${(state.percent).round()}%')
-                                              //         : state.isStarted
-                                              //             ? const Text('0%')
-                                              //             : const Text('On'),
-                                              //     const Icon(
-                                              //         Icons.import_export)
-                                              //   ],
-                                              // ),
                                             ],
                                           ),
                                         ),
