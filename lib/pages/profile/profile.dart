@@ -1,3 +1,4 @@
+import 'package:chat_messanger_app/base/providers/sign_in_provider.dart';
 import 'package:chat_messanger_app/config/colors.dart';
 import 'package:chat_messanger_app/config/texts.dart';
 import 'package:chat_messanger_app/pages/auth/change_password.dart';
@@ -39,29 +40,12 @@ class _Profile extends State<Profile> {
   }
 
   void onGoContactsPage() async {
-    // get the auth service
-
     print('Hello World!');
-
-    // final authService = Provider.of<AuthService>(context, listen: false);
 
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const Contacts()),
     );
-
-    // try {
-    //   await authService.signInWithEmailPassword(
-    //     emailController.text,
-    //     passwordController.text,
-    //   );
-    // } catch (e) {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     SnackBar(
-    //       content: Text(e.toString()),
-    //     ),
-    //   );
-    // }
   }
 
   // sign user out
@@ -76,230 +60,253 @@ class _Profile extends State<Profile> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Scaffold(
-          appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(100),
-            child: SafeArea(
-              child: AppBar(
-                backgroundColor: AppColors.colorSheme,
-                foregroundColor: Colors.white,
-                automaticallyImplyLeading: false,
-                title: Center(
-                  child: Column(
-                    mainAxisAlignment:
-                        MainAxisAlignment.center, // Center title vertically
-                    children: [
-                      const SizedBox(
-                        height: 40,
+        ChangeNotifierProvider(
+          create: (BuildContext context) =>
+              SignInProvider(context: context, onTap: () => {}),
+          child: Consumer<SignInProvider>(
+            builder: (context, value, child) {
+              print("SignInProvider Email: ${value.emailController.text}");
+              return Scaffold(
+                appBar: PreferredSize(
+                  preferredSize: const Size.fromHeight(100),
+                  child: SafeArea(
+                    child: AppBar(
+                      backgroundColor: AppColors.colorSheme,
+                      foregroundColor: Colors.white,
+                      automaticallyImplyLeading: false,
+                      title: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment
+                              .center, // Center title vertically
+                          children: [
+                            const SizedBox(
+                              height: 40,
+                            ),
+                            Row(
+                              children: [
+                                IconButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  icon: const Icon(Icons.arrow_back),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                // *********** image **********
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                      Row(
-                        children: [
-                          IconButton(
-                            onPressed: () => Navigator.pop(context),
-                            icon: const Icon(Icons.arrow_back),
+                      actions: [
+                        IconButton(
+                          onPressed: signOut,
+                          icon: const Icon(
+                            Icons.logout,
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          // *********** image **********
-                        ],
+                        )
+                      ],
+                      titleTextStyle:
+                          const TextStyle(fontSize: 20, color: AppColors.white),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          bottom: Radius.circular(30),
+                        ),
                       ),
-                    ],
-                  ),
-                ),
-                actions: [
-                  IconButton(
-                    onPressed: signOut,
-                    icon: const Icon(
-                      Icons.logout,
                     ),
-                  )
-                ],
-                titleTextStyle:
-                    const TextStyle(fontSize: 20, color: AppColors.white),
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(30),
                   ),
                 ),
-              ),
-            ),
-          ),
-          body: Padding(
-            padding: const EdgeInsets.only(left: 32, right: 32, top: 20.0),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height - 400,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        const SizedBox(
-                          height: 70,
-                        ),
-                        const Text(
-                          'Anna Adams',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 24),
-                        ),
-                        Text(
-                          AppTexts.emailExample,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 24),
-                        ),
-                        // ---------- To do menu ------------
-                        const SizedBox(
-                          height: 50,
-                        ),
-                        Container(
-                          color: Colors.white,
+                body: Padding(
+                  padding:
+                      const EdgeInsets.only(left: 32, right: 32, top: 20.0),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height - 200,
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.vertical,
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Row(
-                                children: [
-                                  TextButton(
-                                      onPressed: () => Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    EditProfile(
-                                                      title: 'Edit Profile',
-                                                    )),
-                                          ),
-                                      child: const Text(
-                                        'Edit profile information',
-                                        style:
-                                            TextStyle(color: AppColors.black),
-                                      ))
-                                ],
+                              const SizedBox(
+                                height: 70,
                               ),
-                              Row(
-                                children: [
-                                  TextButton(
-                                      onPressed: () => Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    BodyMeasurements(
-                                                      title:
-                                                          'Body measurements',
-                                                    )),
-                                          ),
-                                      child: const Text(
-                                        'Body measurements',
-                                        style:
-                                            TextStyle(color: AppColors.black),
-                                      ))
-                                ],
+                              const Text(
+                                'Anna Adams',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 24),
                               ),
-                              Row(
-                                children: [
-                                  TextButton(
-                                      onPressed: () => Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ChangePassword(
-                                                      title: 'Change Password',
-                                                    )),
-                                          ),
-                                      child: const Text(
-                                        'Change Password',
-                                        style:
-                                            TextStyle(color: AppColors.black),
-                                      ))
-                                ],
+                              // Text(
+                              //   context
+                              //       .read<SignInProvider>()
+                              //       .emailController
+                              //       .text,
+                              //   style: const TextStyle(
+                              //       fontWeight: FontWeight.bold, fontSize: 24),
+                              // ),
+                              Text(
+                                value.emailController.text,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24,
+                                ),
                               ),
-                              Row(
-                                children: [
-                                  TextButton(
-                                      onPressed: () => Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    EditProfile(
-                                                      title: 'Notifications',
-                                                    )),
-                                          ),
-                                      child: const Text(
-                                        'Notifications',
-                                        style:
-                                            TextStyle(color: AppColors.black),
-                                      ))
-                                ],
+                              // ---------- To do menu ------------
+                              const SizedBox(
+                                height: 50,
                               ),
-                              Row(
-                                children: [
-                                  TextButton(
-                                      onPressed: () => Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => Languages(
-                                                      title: 'Language',
-                                                    )),
-                                          ),
-                                      child: const Text(
-                                        'Language',
-                                        style:
-                                            TextStyle(color: AppColors.black),
-                                      ))
-                                ],
+                              Container(
+                                color: Colors.white,
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        TextButton(
+                                            onPressed: () => Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          EditProfile(
+                                                            title:
+                                                                'Edit Profile',
+                                                          )),
+                                                ),
+                                            child: const Text(
+                                              'Edit profile information',
+                                              style: TextStyle(
+                                                  color: AppColors.black),
+                                            ))
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        TextButton(
+                                            onPressed: () => Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          BodyMeasurements(
+                                                            title:
+                                                                'Body measurements',
+                                                          )),
+                                                ),
+                                            child: const Text(
+                                              'Body measurements',
+                                              style: TextStyle(
+                                                  color: AppColors.black),
+                                            ))
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        TextButton(
+                                            onPressed: () => Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          ChangePassword(
+                                                            title:
+                                                                'Change Password',
+                                                          )),
+                                                ),
+                                            child: const Text(
+                                              'Change Password',
+                                              style: TextStyle(
+                                                  color: AppColors.black),
+                                            ))
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        TextButton(
+                                            onPressed: () => Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          EditProfile(
+                                                            title:
+                                                                'Notifications',
+                                                          )),
+                                                ),
+                                            child: const Text(
+                                              'Notifications',
+                                              style: TextStyle(
+                                                  color: AppColors.black),
+                                            ))
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        TextButton(
+                                            onPressed: () => Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Languages(
+                                                            title: 'Language',
+                                                          )),
+                                                ),
+                                            child: const Text(
+                                              'Language',
+                                              style: TextStyle(
+                                                  color: AppColors.black),
+                                            ))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Container(
+                                color: Colors.white,
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        TextButton(
+                                            onPressed: () => onGoContactsPage(),
+                                            child: const Text(
+                                              'Contact Us',
+                                              style: TextStyle(
+                                                  color: AppColors.black),
+                                            ))
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        TextButton(
+                                            onPressed: () => Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          PrivacyPolicy(
+                                                            title:
+                                                                'Privacy policy',
+                                                          )),
+                                                ),
+                                            child: const Text(
+                                              'Privacy policy',
+                                              style: TextStyle(
+                                                  color: AppColors.black),
+                                            ))
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               )
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  TextButton(
-                                      onPressed: () => onGoContactsPage(),
-                                      child: const Text(
-                                        'Contact Us',
-                                        style:
-                                            TextStyle(color: AppColors.black),
-                                      ))
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  TextButton(
-                                      onPressed: () => Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    PrivacyPolicy(
-                                                      title: 'Privacy policy',
-                                                    )),
-                                          ),
-                                      child: const Text(
-                                        'Privacy policy',
-                                        style:
-                                            TextStyle(color: AppColors.black),
-                                      ))
-                                ],
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-                // BottomNavbar(),
-              ],
-            ),
+              );
+            },
           ),
-          // bottomNavigationBar: BottomNavbar(),
         ),
         Positioned(
           top: 50,

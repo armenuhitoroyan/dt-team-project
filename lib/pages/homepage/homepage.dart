@@ -90,31 +90,19 @@ class _Homepage extends State<Homepage> {
       ),
       body: Padding(
           padding: const EdgeInsets.only(left: 0, right: 0, top: 0.0),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  AppTexts.today,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                  ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                AppTexts.today,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
                 ),
-                const Placeholder(
-                    child: Expanded(child: CarouselWithIndicatorDemo())),
-                // Placeholder(
-                //     child: Expanded(
-                //         child: Container(
-                //   color: Colors.red,
-                //   width: 200,
-                //   height: 100,
-                //   child: Steps(),
-                // ))),
-                const Placeholder(child: Expanded(child: CarouselWithWidth())),
-              ],
-            ),
+              ),
+              const Expanded(child: CarouselWithIndicatorDemo()),
+              const Expanded(child: CarouselWithWidth()),
+            ],
           )),
     );
   }
