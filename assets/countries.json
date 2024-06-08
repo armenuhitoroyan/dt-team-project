@@ -1,0 +1,132 @@
+[
+    {
+        "id": "1",
+        "name": "United States",
+        "languages": [
+            "English US"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "United Kingdom",
+        "languages": [
+            "English UK"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Armenia",
+        "languages": [
+            "Armenian"
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Spain",
+        "languages": [
+            "Spanish"
+        ]
+    },
+    {
+        "id": "5",
+        "name": "France",
+        "languages": [
+            "French"
+        ]
+    },
+    {
+        "id": "6",
+        "name": "Italy",
+        "languages": [
+            "Italian"
+        ]
+    },
+    {
+        "id": "7",
+        "name": "Arabia",
+        "languages": [
+            "Arabic"
+        ]
+    },
+    {
+        "id": "8",
+        "name": "Russia",
+        "languages": [
+            "Russian"
+        ]
+    },
+    {
+        "id": "9",
+        "name": "Indonessia",
+        "languages": [
+            "Indonesia"
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Germany",
+        "languages": [
+            "German"
+        ]
+    },
+    {
+        "id": "11",
+        "name": "China",
+        "languages": [
+            "Mandarin"
+        ]
+    },
+    {
+        "id": "12",
+        "name": "Japan",
+        "languages": [
+            "Japanese"
+        ]
+    },
+    {
+        "id": "13",
+        "name": "India",
+        "languages": [
+            "Hindi",
+            "English"
+        ]
+    },
+    {
+        "id": "14",
+        "name": "Brazil",
+        "languages": [
+            "Portuguese"
+        ]
+    },
+    {
+        "id": "15",
+        "name": "Canada",
+        "languages": [
+            "English",
+            "French"
+        ]
+    },
+    {
+        "id": "16",
+        "name": "Australia",
+        "languages": [
+            "English"
+        ]
+    },
+    {
+        "id": "17",
+        "name": "Mexico",
+        "languages": [
+            "Spanish"
+        ]
+    },
+    {
+        "id": "18",
+        "name": "South Africa",
+        "languages": [
+            "Zulu",
+            "English",
+            "Afrikaans"
+        ]
+    }
+]
