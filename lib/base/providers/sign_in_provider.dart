@@ -29,7 +29,7 @@ class SignInProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> signIn() async {
+  Future<void> signIn(BuildContext context) async {
     print('Hello World!');
     final authService = Provider.of<AuthService>(context, listen: false);
 

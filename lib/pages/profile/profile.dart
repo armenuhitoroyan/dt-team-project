@@ -1,6 +1,6 @@
-import 'package:chat_messanger_app/base/providers/sign_in_provider.dart';
+import 'package:chat_messanger_app/base/providers/profile_provider.dart';
 import 'package:chat_messanger_app/config/colors.dart';
-import 'package:chat_messanger_app/config/texts.dart';
+
 import 'package:chat_messanger_app/pages/auth/change_password.dart';
 import 'package:chat_messanger_app/pages/others/body_measurement.dart';
 import 'package:chat_messanger_app/pages/others/language/language.dart';
@@ -8,8 +8,7 @@ import 'package:chat_messanger_app/pages/others/privacy/privacy_policy.dart';
 import 'package:chat_messanger_app/pages/profile/contacts.dart';
 import 'package:chat_messanger_app/pages/profile/edit_profile.dart';
 import 'package:chat_messanger_app/services/auth/auth_service.dart';
-// import 'package:chat_messanger_app/services/auth/auth_service.dart';
-// import 'package:chat_messanger_app/widgets/navbar/bottom_navbar.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 // import 'package:provider/provider.dart';
@@ -61,11 +60,10 @@ class _Profile extends State<Profile> {
     return Stack(
       children: [
         ChangeNotifierProvider(
-          create: (BuildContext context) =>
-              SignInProvider(context: context, onTap: () => {}),
-          child: Consumer<SignInProvider>(
+          create: (BuildContext context) => ProfileProvider(context: context),
+          child: Consumer<ProfileProvider>(
             builder: (context, value, child) {
-              print("SignInProvider Email: ${value.emailController.text}");
+              // print("SignInProvider Email: ${value.getData(context)}");
               return Scaffold(
                 appBar: PreferredSize(
                   preferredSize: const Size.fromHeight(100),
@@ -145,13 +143,13 @@ class _Profile extends State<Profile> {
                               //   style: const TextStyle(
                               //       fontWeight: FontWeight.bold, fontSize: 24),
                               // ),
-                              Text(
-                                value.emailController.text,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 24,
-                                ),
-                              ),
+                              // Text(
+                              //   value.emailController.text,
+                              //   style: const TextStyle(
+                              //     fontWeight: FontWeight.bold,
+                              //     fontSize: 24,
+                              //   ),
+                              // ),
                               // ---------- To do menu ------------
                               const SizedBox(
                                 height: 50,
@@ -182,15 +180,17 @@ class _Profile extends State<Profile> {
                                     Row(
                                       children: [
                                         TextButton(
-                                            onPressed: () => Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          BodyMeasurements(
-                                                            title:
-                                                                'Body measurements',
-                                                          )),
-                                                ),
+                                            onPressed: () =>
+                                                value.getData(context),
+                                            // Navigator.push(
+                                            //       context,
+                                            //       MaterialPageRoute(
+                                            //           builder: (context) =>
+                                            //               BodyMeasurements(
+                                            //                 title:
+                                            //                     'Body measurements',
+                                            //               )),
+                                            //     ),
                                             child: const Text(
                                               'Body measurements',
                                               style: TextStyle(

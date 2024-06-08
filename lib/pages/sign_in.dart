@@ -181,7 +181,7 @@ class SignInPage extends StatelessWidget {
                       Button(
                         onTap: () {
                           // context.read<SignInProvider>().signIn();
-                          value.signIn();
+                          value.signIn(context);
                         },
                         text: 'Sign In',
                       ),
