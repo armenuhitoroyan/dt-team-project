@@ -1,8 +1,8 @@
 import 'package:chat_messanger_app/base/providers/sign_in_provider.dart';
-import 'package:chat_messanger_app/base/routes.dart';
+// import 'package:chat_messanger_app/base/routes.dart';
 
 import 'package:chat_messanger_app/pages/auth/reset_password.dart';
-import 'package:chat_messanger_app/services/auth/auth_gate.dart';
+// import 'package:chat_messanger_app/services/auth/auth_gate.dart';
 import 'package:chat_messanger_app/widgets/button.dart';
 import 'package:chat_messanger_app/widgets/textfield.dart';
 import 'package:chat_messanger_app/config/colors.dart';

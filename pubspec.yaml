@@ -55,9 +55,11 @@ dependencies:
 
   # flutter_circular_chart: ^0.1.0
   percent_indicator: ^4.2.2
+  # qr_code_scanner: ^1.0.1
+  # mobile_scanner: ^5.1.1
+  mobile_scanner: ^5.0.1
   qr_code_scanner: ^1.0.1
-  mobile_scanner: ^5.1.1
-  pretty_qr_code: ^3.3.0
+  # pretty_qr_code: ^3.3.0
 
 
 dev_dependencies:
